@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function Register({ register_user }) {
@@ -8,6 +8,7 @@ export default function Register({ register_user }) {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,6 +28,8 @@ export default function Register({ register_user }) {
       .then((response) => response.json())
       .then((res) => {
         toast.success('Registration successful');
+        navigate('/login');
+
       })
       .catch((err) => {
         toast.error('Registration failed');
