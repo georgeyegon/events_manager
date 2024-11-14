@@ -1,119 +1,92 @@
 {
   "posts": [
     {
-      "id": "3783",
-      "title": "Graduation",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F889572073%2F164992380234%2F1%2Foriginal.20241101-134525?crop=focalpoint&fit=crop&h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.513257575758&fp-y=0.144981412639&s=acf3b1cfefbcdf74534a6f956222fa29",
-      "content": "Welcome to my Graduation",
-      "author": "Shades",
-      "comments": [
-        {
-          "id": 1,
-          "author": "Alice",
-          "text": "Great event, looking forward to this!"
-        },
-        {
-          "id": 2,
-          "author": "Bob",
-          "text": "Interesting one, am attending."
-        }
-      ]
-    },
-    {
-      "id": "383",
-      "title": "Grand Opening",
-      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK9mw7klWrCN-q22ja4lxFbmNNmxYrU0kJ0w&s",
-      "content": "Join our ground breaking ceremony",
-      "author": "G Events",
-      "comments": [
-        {
-          "id": 1,
-          "author": "Alice",
-          "text": "Great event, looking forward to this!"
-        },
-        {
-          "id": 2,
-          "author": "Bob",
-          "text": "Interesting one, am attending."
-        }
-      ]
-    },
-    {
-      "id": "d732",
-      "title": "Rema Concert",
-      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt6Lp9njngUAwGucYgGjlN17I5-0ryf7FmtA&s",
-      "content": "Event location Kasarani",
-      "author": "G Events",
+      "id": "1731579746552",
+      "title": "Madaraka Day Afterparty",
+      "image_url": "https://img.freepik.com/free-psd/club-dj-party-flyer-social-media-post_505751-4534.jpg?semt=ais_hybrid",
+      "content": "Welcome to our outdoor afterparty bonfire!",
+      "author": "Mashup",
       "comments": []
     },
     {
-      "id": "3b39",
-      "title": "Cookout",
-      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEIaKF2mZsge_4HcZtYifQN7pDNetLKVfh7Q&s",
-      "content": "Sundays are for barbecue",
-      "author": "G Events",
+      "title": "Black Friday",
+      "image_url": "https://img.freepik.com/free-photo/top-view-black-friday-assortment-black-background_23-2148665583.jpg?semt=ais_hybrid",
+      "content": "Get your Laptop this November!!",
+      "author": "Mashup",
+      "id": "1731605740504"
+    },
+    {
+      "id": "1731612040569",
+      "title": "Tricylcling",
+      "image_url": "https://img.freepik.com/free-photo/dirt-bike-rider-participating-races-circuits-adventure-thrill-with-motorcycle_23-2151482672.jpg?semt=ais_hybrid",
+      "content": "Extra-ordinary championship",
+      "author": "Socademy",
       "comments": []
     },
     {
-      "id": "00e7",
-      "title": "Web Development Webinar",
-      "image_url": "https://t4.ftcdn.net/jpg/01/08/50/51/240_F_108505122_1ip4eoYfIbco2nhDoauNeSQQQnetjGbb.jpg",
-      "content": "Introduction to JS and React.",
-      "author": "GEvents",
-      "comments": []
-    },
-    {
-      "id": "afab",
-      "title": "Movie Night",
-      "image_url": "https://t3.ftcdn.net/jpg/02/91/95/08/240_F_291950881_4EjlRV9pnAY4Jtyo5sq5fP5fcFcEazgU.jpg",
-      "content": "Session premier",
-      "author": "G Events",
-      "comments": []
-    },
-    {
-      "id": "dbc4",
-      "title": "Movie Night",
-      "image_url": "https://t3.ftcdn.net/jpg/02/91/95/08/240_F_291950881_4EjlRV9pnAY4Jtyo5sq5fP5fcFcEazgU.jpg",
-      "content": "Session premier",
-      "author": "G Events",
-      "comments": []
+      "title": "Wedding Show",
+      "image_url": "https://img.freepik.com/free-photo/high-angle-shot-old-shoes-bride-groom-standing-dry-grass_181624-28371.jpg?semt=ais_hybrid",
+      "content": "Save the date for the big wedding day.....",
+      "author": "Wedventure",
+      "id": "1731612157335"
     }
   ],
   "users": [
     {
-      "id": "ae87",
-      "username": "Shades",
-      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrwcRgFA-KFW6u0wScyvZEBWMLME5WkdeCUg&s",
-      "password": "user.101",
-      "isAdmin": true
-    },
-    {
-      "id": "04bb",
-      "username": "DoubleM",
-      "image_url": "https://img.freepik.com/premium-vector/empty-face-icon-avatar-with-afro-hairstyle-vector-illustration_601298-25245.jpg?semt=ais_hybrid",
-      "password": "user.101",
-      "isAdmin": false
-    },
-    {
-      "id": "daa5",
-      "username": "Monday",
-      "image_url": "https://img.freepik.com/free-vector/gradient-avatar-illustration_52683-142438.jpg?semt=ais_hybrid",
-      "password": "user.101",
-      "isAdmin": false
-    },
-    {
-      "id": "8602",
-      "username": "Organizer",
-      "image_url": "https://img.freepik.com/premium-vector/people-profile-icon_24877-40758.jpg?semt=ais_hybrid",
-      "password": "user.101",
-      "isAdmin": true
-    },
-    {
-      "id": "6353",
+      "id": "23e3",
       "username": "Redhut",
-      "image_url": "https://img.freepik.com/premium-vector/empty-face-icon-avatar-with-afro-hairstyle-vector-illustration_601298-25245.jpg?semt=ais_hybrid",
+      "image_url": "https://img.freepik.com/premium-vector/young-man-portrait-with-rounded-colored-frame-icon_24911-7122.jpg?semt=ais_hybrid",
       "password": "user.101",
-      "isAdmin": false
+      "isAdmin": false,
+      "bookedEvents": []
+    },
+    {
+      "id": "5170",
+      "username": "Blackmask",
+      "image_url": "https://img.freepik.com/premium-vector/cute-animal-playing-soccer-ball-cartoon-vector-icon-illustration-animal-sport-icon-concept-isolated_844724-3709.jpg?semt=ais_hybrid",
+      "password": "user.101",
+      "isAdmin": false,
+      "bookedEvents": []
+    },
+    {
+      "id": "3067",
+      "username": "Mashup",
+      "image_url": "https://img.freepik.com/premium-photo/flamingo-armor-head-banner-picture-surrealism-art-collage-modern-look-magazine-style-poster-advertising-mixed-media-inspiration-creativity-bright-colors-copy-space_99433-8370.jpg?semt=ais_hybrid",
+      "password": "user.101",
+      "isAdmin": true,
+      "postedEvents": [
+        "1731579746552",
+        "1731605740504",
+        "1731611180318"
+      ]
+    },
+    {
+      "id": "9507",
+      "username": "Wedventure",
+      "image_url": "https://img.freepik.com/free-vector/gradient-upcoming-events-label-collection_23-2149481564.jpg?semt=ais_hybrid",
+      "password": "user.101",
+      "isAdmin": true,
+      "postedEvents": [
+        "1731612157335"
+      ]
+    },
+    {
+      "id": "d721",
+      "username": "Socademy",
+      "image_url": "https://img.freepik.com/premium-vector/afootball_193274-34255.jpg?semt=ais_hybrid",
+      "password": "user.101",
+      "isAdmin": true,
+      "postedEvents": [
+        "1731612040569"
+      ]
+    },
+    {
+      "id": "daa4",
+      "username": "G123",
+      "image_url": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?semt=ais_hybrid",
+      "password": "user.101",
+      "isAdmin": false,
+      "bookedEvents": []
     }
   ]
 }
