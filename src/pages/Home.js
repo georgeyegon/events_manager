@@ -8,7 +8,7 @@ export default function Home()
   const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(()=>{
-    fetch("http://localhost:5000/posts")
+    fetch("http://localhost:5000/posts" )
     .then((res)=>res.json())
     .then((data)=>{
        setPosts(data)
