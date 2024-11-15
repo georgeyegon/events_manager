@@ -3,15 +3,15 @@ import Event from '../components/Event'
 
 export default function Home() 
 {
-  const [posts, setPosts] = useState([])
+  const [events, setEvents] = useState([])
   const [onDelete, setOndelete] = useState()
   const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(()=>{
-    fetch("http://localhost:5000/posts" )
+    fetch("http://localhost:5000/events" )
     .then((res)=>res.json())
     .then((data)=>{
-       setPosts(data)
+       setEvents(data)
     })
 
   },[onDelete])
@@ -20,9 +20,9 @@ export default function Home()
     setSearchTerm(e.target.value) 
   }
 
-  const filteredPosts = posts.filter(post => 
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    post.content.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredEvents = events.filter(event => 
+    event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    event.content.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   const handleSearchSubmit = (e) => {
@@ -56,12 +56,12 @@ export default function Home()
 
       <div className='grid lg:grid-cols-3 p-4 gap-8'>
         {
-          filteredPosts.length > 0 ? (
-            filteredPosts.map((post) => (
-              <Event key={post.id} setOndelete={setOndelete} post={post} />
+          filteredEvents.length > 0 ? (
+            filteredEvents.map((event) => (
+              <Event key={event.id} setOndelete={setOndelete} event={event} />
             ))
           ) : (
-            <p className="text-center col-span-2 text-green-800">No posts found.</p>
+            <p className="text-center col-span-2 text-green-800">No events found.</p>
           )
         }
       </div>
