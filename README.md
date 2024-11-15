@@ -1,4 +1,4 @@
-## Phase 2 Project
+# Phase 2 Project
 By: George Yegon
 Phone: 0704839736
 Email: georgeyegon01@gmail.com
