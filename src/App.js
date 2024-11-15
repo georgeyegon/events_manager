@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import AddEvent from './pages/AddEvent';
 import EditEvent from './pages/EditEvent';
