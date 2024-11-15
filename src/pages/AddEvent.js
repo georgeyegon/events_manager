@@ -72,7 +72,7 @@ export default function AddEvent() {
   }
 
   return (
-    <div className='grid w-auto h-[80vh] mt-8 border border-gray-700'>
+    <div className='grid w-auto h-[80vh] mt-8 '>
       <div className='bg-green-800 text-white flex justify-center items-center'>
         <Link to="/" className="grid justify-center items-center gap-4">
           <img src="/G.png" className="h-20" alt="G Logo" />
@@ -84,7 +84,6 @@ export default function AddEvent() {
 
       <div className='flex flex-col justify-center items-center p-6'>
         <h1 className='text-center text-green-800 font-semibold text-2xl mb-6'>Add Event</h1>
-        
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           <div className="mb-5">
             <label className="block mb-2 text-md font-medium text-green-800">Title</label>
@@ -118,7 +117,6 @@ export default function AddEvent() {
               required 
             />
           </div>
-
           <div className="mb-5">
             <label className="block mb-2 text-md font-medium text-green-800">Event Organizer</label>
             <input 
@@ -128,7 +126,6 @@ export default function AddEvent() {
               className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"  
             />
           </div>
-
           <div className='flex justify-center'>
             <button type="submit" className="text-white bg-green-800 rounded p-2">
               Save Event
