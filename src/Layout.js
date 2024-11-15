@@ -127,7 +127,7 @@ const Layout = () => {
         </div>
       </nav>
 
-      <div className='bg-gray-100 text-lg container mx-auto min-h-[90vh]'>
+      <div className='text-lg container mx-auto min-h-[90vh]'>
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -146,11 +146,19 @@ const Layout = () => {
       <footer className="rounded-lg shadow dark:bg-green-800 m-4">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="/G.png" className="h-16" alt="G Logo" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-yellow-600">Events</span>
-            </Link>
-            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-yellow-600">
+            <div className='flex items-center gap-4'>
+              <div>
+                <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                  <img src="/G.png" className="h-16" alt="G Logo" />
+                </Link>
+              </div>
+              <div>
+                <span className="self-center text-2xl font-semibold text-yellow-600">Events</span>
+                <p className='text-sm text-yellow-600 hover:text-lg hover:underline'> 0704839736 </p>
+                <p className='text-sm text-yellow-600 hover:text-lg hover:underline'> georgeyegon01@gmail.com </p>
+              </div>
+            </div>
+            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 text-yellow-600">
               <li>
                 <a href="#" className="hover:underline me-4 md:me-6">About</a>
               </li>
@@ -165,8 +173,8 @@ const Layout = () => {
               </li>
             </ul>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-yellow-600">
+          <hr className="my-6 border-gray-200 sm:mx-auto border-gray-700 lg:my-8" />
+          <span className="block text-sm text-gray-500 sm:text-center text-yellow-600">
             © 2024 <a href="#" className="hover:underline">G Events™</a>. All Rights Reserved.
           </span>
         </div>
