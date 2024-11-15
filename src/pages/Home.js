@@ -4,7 +4,6 @@ import Event from '../components/Event'
 export default function Home() 
 {
   const [events, setEvents] = useState([])
-  const [onDelete, setOndelete] = useState()
   const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(()=>{
@@ -14,7 +13,7 @@ export default function Home()
        setEvents(data)
     })
 
-  },[onDelete])
+  },[])
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value) 
@@ -58,7 +57,7 @@ export default function Home()
         {
           filteredEvents.length > 0 ? (
             filteredEvents.map((event) => (
-              <Event key={event.id} setOndelete={setOndelete} event={event} />
+              <Event key={event.id} event={event} />
             ))
           ) : (
             <p className="text-center col-span-2 text-green-800">No events found.</p>
