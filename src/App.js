@@ -17,7 +17,7 @@ const handleLogin = async (username, password) => {
     const user = users.find(u => u.username === username && u.password === password);
 
     if (user) {
-      const token = token-${user.id};
+      const token = `token-${user.id}`;
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('isAdmin', JSON.stringify(user.isAdmin));
