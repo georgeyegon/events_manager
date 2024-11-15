@@ -3,58 +3,88 @@ import { toast } from 'react-toastify';
 
 const Event = ({ event, onBookingUpdate }) => {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [isBooked, setIsBooked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
   useEffect(() => {
-    const adminStatus = JSON.parse(localStorage.getItem('isAdmin'));
-    const currentUser = JSON.parse(localStorage.getItem('user'));
-    setIsAdmin(adminStatus);
-    setUser(currentUser);
+    const loadUserData = () => {
+      try {
+        const currentUser = JSON.parse(localStorage.getItem('user') || 'null');
+        const adminStatus = JSON.parse(localStorage.getItem('isAdmin') || 'false');
+        
+        setIsLoggedIn(!!currentUser);
+        setIsAdmin(adminStatus);
+        setUser(currentUser);
 
-    if (currentUser?.bookedEvents) {
-      setIsBooked(currentUser.bookedEvents.includes(event.id));
-    }
-  }, [event.id]);
+        // Only check booked events if we have both user data and event id
+        if (currentUser?.bookedEvents && event?.id) {
+          setIsBooked(currentUser.bookedEvents.includes(event.id));
+        }
+      } catch (error) {
+        console.error('Error loading user data:', error);
+        setIsLoggedIn(false);
+        setIsAdmin(false);
+        setUser(null);
+        setIsBooked(false);
+      }
+    };
+
+    loadUserData();
+  }, [event?.id]); // Safe dependency using optional chaining
 
   const updateUserBookings = useCallback(async (updatedBookings) => {
-    if (!user) return;
-
-    const response = await fetch(`http://localhost:5000/users/${user.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        bookedEvents: updatedBookings
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    if (!isLoggedIn || !user?.id) {
+      toast.error('Please log in to continue');
+      return;
     }
 
-    const updatedUser = { ...user, bookedEvents: updatedBookings };
-    localStorage.setItem('user', JSON.stringify(updatedUser));
-    setUser(updatedUser);
-    
-    if (onBookingUpdate) {
-      onBookingUpdate(updatedUser);
-    }
-
-    return updatedUser;
-  }, [user, onBookingUpdate]);
-
-  const handleBookEvent = async () => {
-    setIsLoading(true);
     try {
-      if (!user) {
-        throw new Error('Please log in to book events');
+      const response = await fetch(`http://localhost:5000/users/${user.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          bookedEvents: updatedBookings
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const currentBookings = user.bookedEvents || [];
+      const updatedUser = { ...user, bookedEvents: updatedBookings };
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      setUser(updatedUser);
+      
+      if (onBookingUpdate) {
+        onBookingUpdate(updatedUser);
+      }
+
+      return updatedUser;
+    } catch (error) {
+      console.error('Error updating bookings:', error);
+      throw error;
+    }
+  }, [user, onBookingUpdate, isLoggedIn]);
+
+  const handleBookEvent = async () => {
+    if (!isLoggedIn) {
+      toast.error('Please log in to book events');
+      return;
+    }
+
+    if (!event?.id) {
+      toast.error('Event information is not available');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const currentBookings = user?.bookedEvents || [];
       if (currentBookings.includes(event.id)) {
         throw new Error('Event already booked');
       }
@@ -64,30 +94,49 @@ const Event = ({ event, onBookingUpdate }) => {
       setIsBooked(true);
       toast.success('Event booked successfully!');
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message || 'Failed to book event');
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleCancelEvent = async () => {
+    if (!isLoggedIn) {
+      toast.error('Please log in to cancel bookings');
+      return;
+    }
+
+    if (!event?.id || !user?.bookedEvents) {
+      toast.error('Unable to cancel booking at this time');
+      return;
+    }
+
     setIsLoading(true);
     try {
-      if (!user) {
-        throw new Error('Please log in to cancel bookings');
-      }
-
       const updatedBookings = user.bookedEvents.filter(id => id !== event.id);
       await updateUserBookings(updatedBookings);
       setIsBooked(false);
       setShowConfirmDialog(false);
       toast.success('Event cancelled successfully!');
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message || 'Failed to cancel booking');
     } finally {
       setIsLoading(false);
     }
   };
+
+  if (!event) {
+    return (
+      <div className="border rounded-lg p-4 bg-white shadow-md">
+        <div className="animate-pulse space-y-4">
+          <div className="h-8 bg-gray-200 rounded w-3/4 mx-auto"></div>
+          <div className="h-64 bg-gray-200 rounded"></div>
+          <div className="h-4 bg-gray-200 rounded"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="border rounded-lg p-4 bg-white shadow-md hover:shadow-lg transition-shadow duration-200">
@@ -96,12 +145,12 @@ const Event = ({ event, onBookingUpdate }) => {
         
         {event.image_url && (
           <div className="bg-gray-100 rounded-lg h-64 w-full">
-          <img 
-            src={event.image_url} 
-            alt={event.title} 
-            className="w-full h-64 object-contain rounded-lg"
-          />
-        </div>
+            <img 
+              src={event.image_url} 
+              alt={event.title} 
+              className="w-full h-64 object-contain rounded-lg"
+            />
+          </div>
         )}
         
         <p className="text-gray-700">{event.content}</p>
@@ -110,7 +159,7 @@ const Event = ({ event, onBookingUpdate }) => {
           Hosted By: <span className="italic text-green-800 font-medium">{event.author}</span>
         </p>
 
-        {user && !isAdmin && (
+        {isLoggedIn && !isAdmin && (
           <>
             {isBooked ? (
               <>
