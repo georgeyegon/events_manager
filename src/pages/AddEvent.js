@@ -37,7 +37,7 @@ export default function AddEvent() {
     };
 
     try {
-      const eventResponse = await fetch('http://localhost:5000/posts', {
+      const eventResponse = await fetch('http://localhost:5000/events', {
         method: 'POST',
         body: JSON.stringify(newEvent),
         headers: { 'Content-Type': 'application/json' },
