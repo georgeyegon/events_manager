@@ -28,7 +28,7 @@ export default function MyAccount() {
     try {
       const events = await Promise.all(
         eventIds.map((eventId) =>
-          fetch(`http://localhost:5000/posts/${eventId}`).then((res) => res.json())
+          fetch(`http://localhost:5000/events/${eventId}`).then((res) => res.json())
         )
       );
       setBookedEvents(events);
