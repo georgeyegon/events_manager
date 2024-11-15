@@ -67,28 +67,28 @@ const Layout = () => {
 
   return (
     <div>
-      <nav className="rounded-lg shadow dark:bg-green-800 m-4">
+      <nav className="rounded-lg shadow bg-green-800 m-4">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="/G.png" className="h-16" alt="G Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-yellow-600">Events</span>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-yellow-600">Events</span>
           </Link>
           <div className="hidden w-full md:block md:w-auto">
             <ul className="font-medium flex flex-col p-4 md:px-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
               <li>
-                <Link to="/" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                <Link to="/" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                   Home
                 </Link>
               </li>
               {isAdmin && (
                 <>
                 <li>
-                  <Link to="/admin/addevent" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                  <Link to="/admin/addevent" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                     Add Event
                   </Link>
                 </li>
                 <li>
-                  <Link to="/admin/my-events" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                  <Link to="/admin/my-events" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                     My Events
                   </Link>
                 </li>
@@ -96,7 +96,7 @@ const Layout = () => {
               )}
               {isLoggedIn && !isAdmin && (
                 <li>
-                  <Link to="/my-account" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                  <Link to="/my-account" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                     My Account
                   </Link>
                 </li>
@@ -104,12 +104,12 @@ const Layout = () => {
               {!isLoggedIn && (
                 <>
                   <li>
-                    <Link to="/register" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                    <Link to="/register" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                       Register
                     </Link>
                   </li>
                   <li>
-                    <Link to="/login" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                    <Link to="/login" className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                       Login
                     </Link>
                   </li>
@@ -117,7 +117,7 @@ const Layout = () => {
               )}
               {isLoggedIn && (
                 <li>
-                  <button onClick={handleLogout} className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 dark:text-yellow-600 dark:hover:text-white">
+                  <button onClick={handleLogout} className="block py-2 px-3 text-lg text-green-900 rounded md:hover:bg-transparent md:border-0 md:p-0 text-yellow-600 hover:text-white">
                     Logout
                   </button>
                 </li>
@@ -143,7 +143,7 @@ const Layout = () => {
         <Outlet context={{ handleLogin }} />
       </div>
 
-      <footer className="rounded-lg shadow dark:bg-green-800 m-4">
+      <footer className="rounded-lg shadow bg-green-800 m-4">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className='flex items-center gap-4'>
