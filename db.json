@@ -1,14 +1,6 @@
 {
   "events": [
     {
-      "id": "1731579746552",
-      "title": "Madaraka Day Afterparty",
-      "image_url": "https://img.freepik.com/free-psd/club-dj-party-flyer-social-media-post_505751-4534.jpg?semt=ais_hybrid",
-      "content": "Welcome to our outdoor afterparty bonfire!",
-      "author": "Mashup",
-      "comments": []
-    },
-    {
       "title": "Black Friday",
       "image_url": "https://img.freepik.com/free-photo/top-view-black-friday-assortment-black-background_23-2148665583.jpg?semt=ais_hybrid",
       "content": "Get your Laptop this November!!",
@@ -83,6 +75,14 @@
       "content": "Soon than before",
       "author": "Mercy",
       "comments": []
+    },
+    {
+      "id": "1731663158056",
+      "title": "Mud Slide",
+      "image_url": "https://img.freepik.com/free-photo/person-feeling-anxiety-induced-by-swimming-mud_23-2150981943.jpg?semt=ais_hybrid",
+      "content": "Rainy seasons are for mud sliding ",
+      "author": "Mashup",
+      "comments": []
     }
   ],
   "users": [
@@ -93,8 +93,8 @@
       "password": "user.101",
       "isAdmin": false,
       "bookedEvents": [
-        "1731612157335",
-        "1731605740504"
+        "1731605740504",
+        "1731612157335"
       ]
     },
     {
@@ -112,8 +112,8 @@
       "password": "user.101",
       "isAdmin": true,
       "postedEvents": [
-        "1731579746552",
-        "1731605740504"
+        "1731605740504",
+        "1731663158056"
       ]
     },
     {
@@ -143,7 +143,11 @@
       "image_url": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?semt=ais_hybrid",
       "password": "user.101",
       "isAdmin": false,
-      "bookedEvents": []
+      "bookedEvents": [
+        "1731651453681",
+        "1731649875598",
+        "1731605740504"
+      ]
     },
     {
       "id": "e32d",
