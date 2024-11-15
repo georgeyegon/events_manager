@@ -29,6 +29,60 @@
       "content": "Save the date for the big wedding day.....",
       "author": "Wedventure",
       "id": "1731612157335"
+    },
+    {
+      "title": "End of Season Games",
+      "image_url": "https://img.freepik.com/free-vector/hand-drawn-sports-team-raffle-ticke_742173-3578.jpg?semt=ais_hybrid",
+      "content": "Secure your tickets early at a discount of 10%.",
+      "author": "Socademy",
+      "id": "1731649875598"
+    },
+    {
+      "title": "Bush Party",
+      "image_url": "https://img.freepik.com/free-photo/front-view-friends-having-cocktails_23-2150244915.jpg?semt=ais_hybrid",
+      "content": "Welcome to Bush Party 24 Edition",
+      "author": "Tulo",
+      "id": "1731650616628"
+    },
+    {
+      "id": "1731650778119",
+      "title": "Closing Ceremony",
+      "image_url": "https://img.freepik.com/free-vector/grand-opening_52683-8448.jpg?semt=ais_hybrid",
+      "content": "welcome All",
+      "author": "Tulo",
+      "comments": []
+    },
+    {
+      "id": "1731650944727",
+      "title": "Secondary Graduation",
+      "image_url": "https://img.freepik.com/free-psd/congratulations-graduates-illustration_23-2151408110.jpg?semt=ais_hybrid",
+      "content": "Welcome",
+      "author": "Tulo",
+      "comments": []
+    },
+    {
+      "id": "1731651166737",
+      "title": "Anniversary",
+      "image_url": "https://img.freepik.com/free-psd/minimal-template-wedding-banner_23-2148382909.jpg?semt=ais_hybrid",
+      "content": "Welcome",
+      "author": "Mercy",
+      "comments": []
+    },
+    {
+      "id": "1731651372016",
+      "title": "Bonfire Party",
+      "image_url": "https://img.freepik.com/free-photo/bonfire-beach_144627-2587.jpg?semt=ais_hybrid",
+      "content": "Keep the date ",
+      "author": "Mercy",
+      "comments": []
+    },
+    {
+      "id": "1731651453681",
+      "title": "Adventure",
+      "image_url": "https://img.freepik.com/free-photo/rear-view-back-young-asian-hiking-man-standing-riseup-hands-with-happy-peak-rocky-mountain-copy-space_1150-57186.jpg?semt=ais_hybrid",
+      "content": "Soon than before",
+      "author": "Mercy",
+      "comments": []
     }
   ],
   "users": [
@@ -38,7 +92,10 @@
       "image_url": "https://img.freepik.com/premium-vector/young-man-portrait-with-rounded-colored-frame-icon_24911-7122.jpg?semt=ais_hybrid",
       "password": "user.101",
       "isAdmin": false,
-      "bookedEvents": []
+      "bookedEvents": [
+        "1731605740504",
+        "1731612157335"
+      ]
     },
     {
       "id": "5170",
@@ -56,8 +113,7 @@
       "isAdmin": true,
       "postedEvents": [
         "1731579746552",
-        "1731605740504",
-        "1731611180318"
+        "1731605740504"
       ]
     },
     {
@@ -77,7 +133,8 @@
       "password": "user.101",
       "isAdmin": true,
       "postedEvents": [
-        "1731612040569"
+        "1731612040569",
+        "1731649875598"
       ]
     },
     {
@@ -87,6 +144,47 @@
       "password": "user.101",
       "isAdmin": false,
       "bookedEvents": []
+    },
+    {
+      "id": "e32d",
+      "username": "Tulo",
+      "image_url": "https://img.freepik.com/free-vector/professional-tiktok-profile-picture_742173-5866.jpg?semt=ais_hybrid",
+      "password": "1234",
+      "isAdmin": true,
+      "postedEvents": [
+        "1731650616628",
+        "1731650778119",
+        "1731650944727"
+      ]
+    },
+    {
+      "id": "d600",
+      "username": "Tulo",
+      "image_url": "https://img.freepik.com/free-photo/front-view-man-with-beard-posing_23-2149438512.jpg?semt=ais_hybrid",
+      "password": "1234",
+      "isAdmin": false
+    },
+    {
+      "id": "60b5",
+      "username": "Mercy",
+      "image_url": "https://img.freepik.com/premium-photo/portrait-curlyhaired-woman-with-glasses-looking-into-camera-isolated-white-background_283470-8491.jpg?semt=ais_hybrid",
+      "password": "1234",
+      "isAdmin": true,
+      "postedEvents": [
+        "1731651166737",
+        "1731651372016",
+        "1731651453681"
+      ]
+    },
+    {
+      "id": "b446",
+      "username": "Chemoget",
+      "image_url": "https://img.freepik.com/free-photo/serious-self-assured-man-with-curly-hair-looks-with-concentrated-expression-dressed-white-shirt-listens-attentively_273609-17084.jpg?semt=ais_hybrid",
+      "password": "1234",
+      "isAdmin": false,
+      "bookedEvents": [
+        "1731612157335"
+      ]
     }
   ]
 }
