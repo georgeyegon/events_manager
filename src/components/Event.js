@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { toast } from 'react-toastify';
 
-const Post = ({ post, onBookingUpdate }) => {
+const Event = ({ event, onBookingUpdate }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [user, setUser] = useState(null);
   const [isBooked, setIsBooked] = useState(false);
@@ -15,9 +15,9 @@ const Post = ({ post, onBookingUpdate }) => {
     setUser(currentUser);
 
     if (currentUser?.bookedEvents) {
-      setIsBooked(currentUser.bookedEvents.includes(post.id));
+      setIsBooked(currentUser.bookedEvents.includes(event.id));
     }
-  }, [post.id]);
+  }, [event.id]);
 
   const updateUserBookings = useCallback(async (updatedBookings) => {
     if (!user) return;
@@ -55,11 +55,11 @@ const Post = ({ post, onBookingUpdate }) => {
       }
 
       const currentBookings = user.bookedEvents || [];
-      if (currentBookings.includes(post.id)) {
+      if (currentBookings.includes(event.id)) {
         throw new Error('Event already booked');
       }
 
-      const updatedBookings = [...currentBookings, post.id];
+      const updatedBookings = [...currentBookings, event.id];
       await updateUserBookings(updatedBookings);
       setIsBooked(true);
       toast.success('Event booked successfully!');
@@ -77,7 +77,7 @@ const Post = ({ post, onBookingUpdate }) => {
         throw new Error('Please log in to cancel bookings');
       }
 
-      const updatedBookings = user.bookedEvents.filter(id => id !== post.id);
+      const updatedBookings = user.bookedEvents.filter(id => id !== event.id);
       await updateUserBookings(updatedBookings);
       setIsBooked(false);
       setShowConfirmDialog(false);
@@ -92,22 +92,22 @@ const Post = ({ post, onBookingUpdate }) => {
   return (
     <div className="border rounded-lg p-4 bg-white shadow-md hover:shadow-lg transition-shadow duration-200">
       <div className="space-y-4">
-        <h1 className="text-2xl text-green-800 font-semibold text-center">{post.title}</h1>
+        <h1 className="text-2xl text-green-800 font-semibold text-center">{event.title}</h1>
         
-        {post.image_url && (
+        {event.image_url && (
           <div className="bg-gray-100 rounded-lg h-64 w-full">
           <img 
-            src={post.image_url} 
-            alt={post.title} 
+            src={event.image_url} 
+            alt={event.title} 
             className="w-full h-64 object-contain rounded-lg"
           />
         </div>
         )}
         
-        <p className="text-gray-700">{post.content}</p>
+        <p className="text-gray-700">{event.content}</p>
         
         <p className="text-sm">
-          Hosted By: <span className="italic text-green-800 font-medium">{post.author}</span>
+          Hosted By: <span className="italic text-green-800 font-medium">{event.author}</span>
         </p>
 
         {user && !isAdmin && (
@@ -133,7 +133,7 @@ const Post = ({ post, onBookingUpdate }) => {
                     <div className="bg-white rounded-lg p-6 max-w-sm w-full">
                       <h3 className="text-lg font-semibold mb-4">Cancel Event Booking</h3>
                       <p className="text-gray-600 mb-6">
-                        Are you sure you want to cancel your booking for "{post.title}"? This action cannot be undone.
+                        Are you sure you want to cancel your booking for "{event.title}"? This action cannot be undone.
                       </p>
                       <div className="flex justify-end space-x-4">
                         <button
@@ -175,4 +175,4 @@ const Post = ({ post, onBookingUpdate }) => {
   );
 };
 
-export default Post;
+export default Event;
