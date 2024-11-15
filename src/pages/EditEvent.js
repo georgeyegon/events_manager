@@ -11,7 +11,7 @@ const EditEvent = () => {
   const [author, setAuthor] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/events/${id}`)
+    fetch(`https://events-manager-5wr8.onrender.com/events/${id}`)
       .then(res => res.json())
       .then(data => {
         setTitle(data.title);
@@ -28,7 +28,7 @@ const EditEvent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/events/${id}`, {
+    fetch(`https://events-manager-5wr8.onrender.com/events/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

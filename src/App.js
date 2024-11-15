@@ -11,7 +11,7 @@ import MyEvents from './pages/MyEvents';
 
 const handleLogin = async (username, password) => {
   try {
-    const response = await fetch('http://localhost:5000/users');
+    const response = await fetch('https://events-manager-5wr8.onrender.com/users');
     const users = await response.json();
 
     const user = users.find(u => u.username === username && u.password === password);

@@ -42,7 +42,7 @@ const Event = ({ event, onBookingUpdate }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/users/${user.id}`, {
+      const response = await fetch(`https://events-manager-5wr8.onrender.com/users/${user.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

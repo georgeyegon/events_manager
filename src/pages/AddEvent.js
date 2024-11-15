@@ -37,7 +37,7 @@ export default function AddEvent() {
     };
 
     try {
-      const eventResponse = await fetch('http://localhost:5000/events', {
+      const eventResponse = await fetch('https://events-manager-5wr8.onrender.com/events', {
         method: 'POST',
         body: JSON.stringify(newEvent),
         headers: { 'Content-Type': 'application/json' },
@@ -45,7 +45,7 @@ export default function AddEvent() {
       await eventResponse.json();
 
       const updatedPostedEvents = [...(currentUser.postedEvents || []), newEvent.id];
-      const userResponse = await fetch(`http://localhost:5000/users/${currentUser.id}`, {
+      const userResponse = await fetch(`https://events-manager-5wr8.onrender.com/users/${currentUser.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
