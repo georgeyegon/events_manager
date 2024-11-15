@@ -47,7 +47,7 @@ export default function Register({ register_user }) {
   }
 
   return (
-    <div className='grid w-auto  h-[80vh] mt-8 border border-gray-700'>
+    <div className='grid w-auto  h-[80vh] mt-8'>
       <div className='bg-green-800 text-white flex justify-center items-center'>
         <Link to="/" className="grid justify-center items-center gap-4">
           <img src="/G.png" className="h-20" alt="G Logo" />
