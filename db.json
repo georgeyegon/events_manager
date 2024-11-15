@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "events": [
     {
       "id": "1731579746552",
       "title": "Madaraka Day Afterparty",
@@ -93,8 +93,8 @@
       "password": "user.101",
       "isAdmin": false,
       "bookedEvents": [
-        "1731605740504",
-        "1731612157335"
+        "1731612157335",
+        "1731605740504"
       ]
     },
     {
