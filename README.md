@@ -1,3 +1,24 @@
+## Phase 2 Project
+By: George Yegon
+Phone: 0704839736
+Email: georgeyegon01@gmail.com
+
+# Event Management System
+This app aims to help event organizers reach a bigger audience and create convenience for both parties.
+
+# Technologies Used
+1. Create React App
+2. HTML
+3. CSS
+4. JavaScript
+5. React
+6. Tailwind CSS
+7. Git and GitHub
+
+# How to run the App
+On your terminal you can ### `npm start` to start the front-end in your local environment.
+Open another terminal and ### `npm run dev` to start the mock server in db.json.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
