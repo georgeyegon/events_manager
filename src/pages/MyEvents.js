@@ -28,7 +28,7 @@ export default function MyEvents() {
     try {
       const events = await Promise.all(
         eventIds.map((eventId) =>
-          fetch(`http://localhost:5000/posts/${eventId}`).then((res) => res.json())
+          fetch(`http://localhost:5000/events/${eventId}`).then((res) => res.json())
         )
       );
       setPostedEvents(events);
@@ -46,7 +46,7 @@ export default function MyEvents() {
     );
 
     try {
-      await fetch(`http://localhost:5000/posts/${eventId}`, {
+      await fetch(`http://localhost:5000/events/${eventId}`, {
         method: 'DELETE',
       });
 
